@@ -5,29 +5,30 @@
 
 
 ### TIL 목차 
-* [REST](#rest)
+* [1.1 REST](#1-1-rest)
   - [REST의 개념](#rest의-개념)
   - [REST의 구성 요소](#rest의-구성-요소)
   - [REST의 장단점](#rest의-장단점)
   - [REST의 특징](#rest의-특징)
   - [REST가 필요한 이유](#rest가-필요한-이유)
-* [REST API](#rest-api)
+* [1.2 REST API](#1-2-rest-api)
   - [REST API란?](#rest-api란)
   - [REST API의 특징](#rest-api의-특징)
-* [RESTful](#restful)
-  - [RESTful이란?](#restful이란?)
+* [1.3 RESTful](#1-3-restful)
+  - [RESTful이란?](#restful이란)
   - [RESTful의 목적](#restful의-목적)
   - [RESTful하지 못한 경우](#restful하지-못한-경우)
-* [HTTP 통신](#http-통신)
+* [2.1 HTTP](#2-1-http)
   - [HTTP 통신 개념](#http-통신-개념)
-  - [HTTP 통신 과정](#http-통신-과정)
-* [API 응답 방식](#api-응답-방식)
+  - [HTTP 통신 방식](#http-통신-방식)
+* [3.1 브라우저에 URL입력 후 접속할 때까지의 과정](#3-1-브라우저에-URL입력-후-접속할-때까지의-과정)
+* [4.1 API 응답 방식](#3-1-api-응답-방식)
   - [@PathVariable](#@PathVariable)
   - [JSON](#json)
 
 - - - 
 
-# REST
+# 1-1 REST
 ## REST의 개념
 - "Represntational State Transfer"의 약자 
   * 자원을 이름(자원의 표현)으로 구분하여 해당 자원의 상태(정보)를 주고 받는 모든 것을 의미.
@@ -91,7 +92,7 @@
 - 다양한 클라이언트의 등장
   * 서버 프로그램이 다양한 브라우저, 모바일 환경에서도 통신을 할 수 있어야 함.
 
-# REST API
+# 1-2 REST API
 ## REST API란
 - REST 기반으로 서비스 API를 구현한 것. 
 - OpenAPI, 마이크로 서비스 등을 제공하는 업체 대부분은 REST API를 제공함. 
@@ -103,8 +104,8 @@
 - REST API 설계 예시
 <img width="759" alt="restapi-example" src="https://user-images.githubusercontent.com/58394729/129701855-f0e2a076-b00f-48b2-aaa4-5086949062a4.png">
 
-# RESTful
-## RESTful이란?
+# 1-3 RESTful
+## RESTful이란
 - 'REST API'를 제공하는 웹서비스를 'RESTful'하다고 할 수 있음. 
 - REST 원리를 따르는 시스템은 RESTful이란 용어로 지칭됨. 
 
@@ -123,16 +124,30 @@ https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
 
 
 
-# HTTP 통신
+# 2-1 HTTP
 ## HTTP 통신 개념
+- HyperText Transfer Protocol의 약자로 인터넷에서 데이터를 주고받는 프로토콜. 
+- HTML 뿐만 아니라 JSON 등 다영한 포맷이 가능함. 
+
+## HTTP 통신 방식
+- 클라이언트가 서버에 **요청**을 보내면 그에 맞는 **응답** 결과를 돌려주고, 클라이언트는 사용자에게 서버로부터 응답받은 결과를 보여줌. 
+- 클라이언트의 요청이 있을 때 서버가 응답하는 방식으로 **단방향 통신**임. 
+- **비연결성**
+    + 클라이언트가 서버에 요청을 보내고 응답을 받으면 통신이 종료됨. 
+    + 서버는 클라이언트가 웹사이트에 접속해있는지 알 수 없음. 
+    + 통신을 주고 받아도 서버와 클라이언트가 연결되어있는 것이 아니라 각각의 통신은 독립적. 
+ ![image](https://user-images.githubusercontent.com/58394729/129706396-1230eaee-29d9-4fcf-9770-91f6a7438284.png)
+- HTTP request, response 구조
+![image (1)](https://user-images.githubusercontent.com/58394729/129706745-bcab0a02-4172-433f-a775-1c7241af9abf.png)
 
 
-## HTTP 통신 과정
+
+# 3-1 브라우저에 URL입력 후 접속할 때까지의 과정
 
 
 
 
-# API 응답 방식
+# 4-1 API 응답 방식
 
 ## @PathVariable
 
