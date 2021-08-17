@@ -14,8 +14,10 @@
 * [REST API](#rest-api)
   - [REST API란?](#rest-api란)
   - [REST API의 특징](#rest-api의-특징)
-  - [REST API의 장점](#rest-api의-장점)
-* [RESTful이란?](#restful이란)
+* [RESTful](#restful)
+  - [RESTful이란?](#restful이란?)
+  - [RESTful의 목적](#restful의-목적)
+  - [RESTful하지 못한 경우](#restful하지-못한-경우)
 * [HTTP 통신](#http-통신)
   - [HTTP 통신 개념](#http-통신-개념)
   - [HTTP 통신 과정](#http-통신-과정)
@@ -91,11 +93,32 @@
 
 # REST API
 ## REST API란
+- REST 기반으로 서비스 API를 구현한 것. 
+- OpenAPI, 마이크로 서비스 등을 제공하는 업체 대부분은 REST API를 제공함. 
+
+
 ## REST API의 특징
-## REST API의 장점
+- 사내 시스템들도 REST 기반으로 시스템을 분산해 확장성과 재사용성을 높여 유지보수 및 운용을 편리하게 할 수 있음. 
+- REST는 HTTP 표준을 기반으로 구현하므로, HTTP를 지원하는 프로그램 언어로 클라이언트, 서버를 구현할 수 있음. 
+- REST API 설계 예시
+<img width="759" alt="restapi-example" src="https://user-images.githubusercontent.com/58394729/129701855-f0e2a076-b00f-48b2-aaa4-5086949062a4.png">
 
+# RESTful
+## RESTful이란?
+- 'REST API'를 제공하는 웹서비스를 'RESTful'하다고 할 수 있음. 
+- REST 원리를 따르는 시스템은 RESTful이란 용어로 지칭됨. 
 
-# RESTful이란?
+## RESTful의 목적
+- 이해하기 쉽고 사용하기 쉬운 REST API를 만드는 것.
+- RESTful한 API를 구현하는 근본적인 목적은 일관적인 컨밴션을 통한 API의 이해도 및 호환성을 높이는 것이 주 동기이므로, 성능이 중요한 상황에서는 굳이 RESTful한 API를 구현할 필요는 겂다. 
+
+## RESTful하지 못한 경우
+- CRUD 기능을 모두 POST로만 처리하는 API
+- route에 resource, id외의 정보가 들어가는 경우 (/students/updateName)
+
+### 참고문헌
+https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
+
 
 
 
