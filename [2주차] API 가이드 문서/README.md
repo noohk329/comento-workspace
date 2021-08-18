@@ -21,7 +21,7 @@
 * [2.1 HTTP](#2-1-http)
   - [HTTP 통신 개념](#http-통신-개념)
   - [HTTP 통신 방식](#http-통신-방식)
-* [3.1 브라우저에 URL입력 후 접속할 때까지의 과정](#3-1-브라우저에-URL입력-후-접속할-때까지의-과정)
+* [3.1 웹 브라우저 요청 흐름](#3-1-웹-브라우저-요청-흐름)
 * [4.1 API 응답 방식](#3-1-api-응답-방식)
   - [@PathVariable](#@PathVariable)
   - [JSON](#json)
@@ -142,16 +142,49 @@ https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
 
 
 
-# 3-1 브라우저에 URL입력 후 접속할 때까지의 과정
-
-
+# 3-1 웹 브라우저 요청 흐름
+1. 주소표시줄에 URL을 입력하고 Enter를 입력한다. 
+2. 웹 브라우저가 URL을 해석한다.
+3. HSTS 목룍을 로드해서 확인 후, HTTPS 혹은 HTTP로 보낸다. 
+4. DNS를 조회한다. 
+5. ARP로 대상의 IP와 MAC address를 알아낸다. 
+6. 대상과 TCP 통신을 통해 소켓을 연다.
+    -  이전 단계에서 찾은 IP와 PORT 정보를 가지고 SYN, SYN+ACK, ACK 과정을 통해 서버와 연결함. 
+    -  연결이 성공되면 TCP/IP 계층으로 데이터를 전달한다.
+    -  TCP/IP 패킷을 생성함. HTTP 메시지 포함. 
+8. HTTP 프로토콜로 요청한다.        
+9. HTTP 서버가 응답한다. 
+    - HTTPD 서버가 요청을 수신. 
+    - 서버는 요청을 매개변수로 구분. (HTTP Method) 
+    - 가상 호스트가 있는지 체크.
+    - 서버는 GET 요청 수락 가능한지 체크. 
+    - 요청에 따른 컨텐츠 불러옴. 
+    - 해석 후 출력을 클라이언트로 스트리밍. 
+10. 웹브라우저에서 응답메시지를 받아 그린다. 
 
 
 # 4-1 API 응답 방식
 
 ## @PathVariable
+- Spring에서 제공하는 기능으로 URL경로에 파라미터를 보내서 사용할 수 있음. 
+- 경로의 특정 위치 값이 고정되지 않고 달라질 때 사용. 
+
+'''java
+	@GetMapping("/user/{userName}")
+	public String user(@PathVariable String userName){
+		System.out.println(userName);
+		return "index";
+	}
+'''
 
 ## JSON 
+- Javascript 객체 문법으로 구조화된 데이터를 표현하기 위한 문자 기반의 표준 포맷
+- 웹 어플리게이션에서 데이터를 전송할 때 일반적으로 사용. 일반적으로 서버에서 클라이언트로 데이터를 보낼때 사용. 클라이언트가 사용하는 언어에 관계 없이 통일된 데이터를 주고받을 수 있도록 하기 위해. 
+- NoSQL에서 표준 표기법으로 취급되고 있으며 관계형DB인 PostgreSQL, MySQL에서도 지원하기 시작함. 
+- 단점: 문법 오류에 민감, 주석을 지원하지 않음, 데이터 타입을 강제할 수 없음. 
+- {} 는 객체, [] 는 배열 
+
+<img width="673" alt="스크린샷 2021-08-18 오후 1 26 11" src="https://user-images.githubusercontent.com/58394729/129836853-ba056e9f-b76d-4955-abc7-91b70b1c5451.png">
 
 
 
