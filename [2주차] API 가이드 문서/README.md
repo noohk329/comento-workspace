@@ -169,13 +169,17 @@ https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html
 - Spring에서 제공하는 기능으로 URL경로에 파라미터를 보내서 사용할 수 있음. 
 - 경로의 특정 위치 값이 고정되지 않고 달라질 때 사용. 
 
-'''java
+<pre>
+<code>
 	@GetMapping("/user/{userName}")
 	public String user(@PathVariable String userName){
 		System.out.println(userName);
 		return "index";
 	}
-'''
+</code>
+</pre>
+
+
 
 ## JSON 
 - Javascript 객체 문법으로 구조화된 데이터를 표현하기 위한 문자 기반의 표준 포맷
