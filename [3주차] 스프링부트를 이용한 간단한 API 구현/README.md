@@ -322,6 +322,7 @@ public class settingTest {
   - Request URL: http://localhost:8031/20/06/A
   - 20년 6월 로그인한 A 부서의 로그인수 조회
   - 결과
+   <img width="564" alt="스크린샷 2021-08-24 오후 1 54 48" src="https://user-images.githubusercontent.com/58394729/130557889-6fa52f54-f6ea-4991-9057-058aac7788f2.png">
 
 * __휴일 제외 하루 평균 로그인 수 조회 (차주 구현 필요)__
   - Request URL: http://localhost:8031/average/holiday 
