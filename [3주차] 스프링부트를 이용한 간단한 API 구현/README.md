@@ -15,6 +15,13 @@
 
 
 ### 1. Spring Boot 개발환경 세팅
+* __디렉토리__
+
+   <img width="357" alt="스크린샷 2021-08-24 오후 1 45 16" src="https://user-images.githubusercontent.com/58394729/130557247-9cd5c4b3-3e97-43ce-b47e-ee3257b5a785.png">
+
+* __개발환경 세팅 완료__: http://localhost:8031/test
+
+   <img width="256" alt="스크린샷 2021-08-23 오후 9 49 23" src="https://user-images.githubusercontent.com/58394729/130557099-7fb85a59-a933-419d-b3de-a97b7aed3001.png">
 
 ### 2. Database 데이터 추가 (requestInfo, user)
 * __requestInfo 테이블__
