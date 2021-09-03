@@ -85,7 +85,7 @@ saveHoliday()
 
 ### 3. 휴일 제외한 평균 API 조회 결과
 
-* __휴일 제외 하루 평균 로그인 수 조회 (차주 구현 필요)__
+* __휴일 제외 하루 평균 로그인 수 조회__
   - Request URL: http://localhost:8031/average/holiday 
   - 결과
   <img width="500" alt="스크린샷 2021-09-03 오후 2 49 12" src="https://user-images.githubusercontent.com/58394729/131958068-99ad71d1-f83a-4d73-97f2-997146c2166b.png">
