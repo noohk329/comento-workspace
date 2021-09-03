@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.devfun.settingweb_boot.dao.StatisticMapper">
+ 
+    <select id="selectYearLogin" parameterType="string" resultType="hashMap">
+        select count(*) as totCnt
+        from statistc.requestinfo ri
+        where left(ri.createDate, 2) = #{year};
+    </select>
+    
+    <select id="selectYearMonthLogin" parameterType="string" resultType="hashMap">
+        select count(*) as totCnt
+        from statistc.requestinfo ri
+        where left(ri.createDate, 2) = #{year} and mid(ri.createDate, 3, 2) = #{month};
+    </select>
+    
+    <select id="selectYearMonthDateLogin" parameterType="string" resultType="hashMap">
+        select count(*) as totCnt
+        from statistc.requestinfo ri
+        where left(ri.createDate, 2) = #{year} 
+        and mid(ri.createDate, 3, 2) = #{month} 
+        and mid(ri.createDate, 5, 2) = #{date};
+    </select>
+    
+    <select id="selectAverageLogin" parameterType="string" resultType="hashMap">
+        select count(*)/
+(select count(distinct(substring(ri.createDate, 1, 6))) from statistc.requestInfo ri) as average
+from statistc.requestInfo;
+    </select>
+    
+    <select id="selectAverageHolidayLogin" parameterType="string" resultType="hashMap">
+ 		select avg(cnt) from 
+		(select count(*) cnt from statistc.requestInfo where substring(createDate, 7, 2) != '06' 
+			and substring(createDate, 1, 6) not in (select date from statistc.holiday) group by createDate) as datecnt;
+    </select>
+    
+    <select id="selectOrganLogin" parameterType="string" resultType="hashMap">
+        select count(*) as totCnt 
+		from statistc.requestInfo ri, statistc.user
+		where ri.userID = user.userID
+		and left(ri.createDate, 2) = #{year} and mid(ri.createDate, 3, 2) = #{month} 
+		and HR_ORGAN = #{organ};
+    </select>
+    
+</mapper>
