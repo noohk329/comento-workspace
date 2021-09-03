@@ -14,7 +14,7 @@
 ## 최종 REST API 구현
 
 
-### 1. API 사용하여 공휴일 데이터베이스 테이블 생성 
+### 1. 오픈 API 사용하여 공휴일 데이터베이스 테이블 생성 
 * __공공 API 링크:__ [특일 정보](https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15012690)
 
 * __python 코드__
